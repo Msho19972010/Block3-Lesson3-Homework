@@ -16,15 +16,20 @@ public class Main {
 
         LinkedList<Float> newArrayList = new LinkedList<>();
 
+         while(k <= 0) {
+            System.out.println("\u001B[31m" + "Divide by zero or less than zero please change the value of the 'k' variable:");
+            k = in.nextInt();
+            System.out.println("\u001B[0m");
+        }
+
         for(int i = 0; i < arr.size() - (k - 1); i++) {
-            int tempIndex = i;
             float middleValueSum = 0;
             float middleValue = 0;
 
             for(int j = 0; j < k; j++) {
-                middleValueSum += arr.get(tempIndex);
+                middleValueSum += arr.get(i);
                 middleValue = middleValueSum / k;
-                tempIndex++;
+                i++;
             }
 
             newArrayList.add(middleValue);
